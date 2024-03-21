@@ -1,2 +1,4 @@
 #!/usr/bin/env node
-console.log('asd')
+import { sayHello } from '../src/cli.js';
+
+sayHello();
