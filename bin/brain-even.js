@@ -25,7 +25,7 @@ const isEven = () => {
 		}
 		isEven();
 	} else if ((randomNumber % 2 !== 0 && answer === 'yes') || (randomNumber % 2 === 0 && answer === 'no')) {
-		console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.
+		console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.
         Let's try again, ${name}`);
 	} else if (answer !== 'yes' && answer !== 'no') {
 		console.log(`'${answer}' is wrong answer ;(. Correct answer was 'no'.
