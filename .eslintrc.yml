@@ -13,4 +13,14 @@ parserOptions:
   ecmaVersion: latest
 
 rules:
+  quotes: 1
+  no-mixed-spaces-and-tabs: 0
   no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]
+  indent: [2, "tab"]
+  no-tabs: 0
+  no-console: 0
+  import/extensions: # FIXME: remove when rule will be adjusted for new nodejs version
+    - error
+    - ignorePackages
+    - js: always
+  linebreak-style: ["error", "windows"]
