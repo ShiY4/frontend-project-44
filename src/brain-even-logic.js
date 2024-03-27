@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { sayHello, name } from '../src/sayHello.js';
+import { sayHello, name } from './sayHello.js';
 
 sayHello();
 
