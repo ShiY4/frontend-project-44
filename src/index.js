@@ -87,3 +87,60 @@ export const calc = () => {
         Let's try again, ${name}`);
 	}
 };
+
+export const isNod = () => {
+	const scoreTimer = () => {
+		if (score === 3) {
+			return console.log(`Congratulations, ${name}`);
+		}
+		score += 1;
+		isNod();
+		return score;
+	};
+
+	// Создаем два операнда
+	const randomNumberFirst = random();
+	const randomNumberSecond = random();
+	const firstArr = [];
+	const secondArr = [];
+	const finalArr = [];
+
+	for (let i = 0; i <= randomNumberFirst; i += 1) {
+		if (randomNumberFirst % i === 0) {
+			firstArr.push(i);
+		}
+	}
+
+	for (let i = 0; i <= randomNumberSecond; i += 1) {
+		if (randomNumberSecond % i === 0) {
+			secondArr.push(i);
+		}
+	}
+
+	if (firstArr.length > secondArr.length) {
+		for (let j = 0; j <= secondArr.length; j += 1) {
+			if (firstArr.includes(secondArr[j])) {
+				finalArr.push(secondArr[j]);
+			}
+		}
+	} else {
+		for (let j = 0; j <= firstArr.length; j += 1) {
+			if (secondArr.includes(firstArr[j])) {
+				finalArr.push(firstArr[j]);
+			}
+		}
+	}
+
+	// Переменная для правильного ответа, которая используется в сравнении при проверке ответа
+	const correctAnswer = finalArr.at(-1);
+	const answer = readlineSync.question(`\nQuestion: ${randomNumberFirst} | ${randomNumberSecond}\nYour answer: `);
+
+	// Проверка ответа
+	if ((correctAnswer === +answer)) { // Если ответ верный
+		console.log('Correct!');
+		scoreTimer();
+	} else { // Если ответ неверный
+		console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
+        Let's try again, ${name}`);
+	}
+};
