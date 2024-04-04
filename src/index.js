@@ -185,3 +185,44 @@ export const isProgression = () => {
         Let's try again, ${name}`);
 	}
 };
+
+// Игра "Простое ли число?"
+export const isPrime = () => {
+	// Счетчик правильных ответов
+	const scoreTimer = () => {
+		if (score === 3) {
+			return console.log(`Congratulations, ${name}`);
+		}
+		score += 1;
+		isPrime();
+		return score;
+	};
+
+	const randomNumber = random();
+	let correctAnswer = '';
+
+	const multiplierArr = [];
+
+	for (let i = 0; i <= randomNumber; i += 1) {
+		if (randomNumber % i === 0) {
+			multiplierArr.push(i);
+		}
+	}
+
+	if (multiplierArr.length > 2) {
+		correctAnswer = 'no';
+	} else {
+		correctAnswer = 'yes';
+	}
+
+	const answer = readlineSync.question(`\nQuestion: ${randomNumber}\nYour answer: `);
+
+	// Проверка ответа
+	if ((correctAnswer === answer)) { // Если ответ верный
+		console.log('Correct!');
+		scoreTimer();
+	} else { // Если ответ неверный
+		console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
+        Let's try again, ${name}`);
+	}
+};
