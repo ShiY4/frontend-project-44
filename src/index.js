@@ -88,7 +88,9 @@ export const calc = () => {
 	}
 };
 
+// Игра нахождения НОД
 export const isNod = () => {
+	// Счетчик правильных ответов
 	const scoreTimer = () => {
 		if (score === 3) {
 			return console.log(`Congratulations, ${name}`);
@@ -134,6 +136,45 @@ export const isNod = () => {
 	// Переменная для правильного ответа, которая используется в сравнении при проверке ответа
 	const correctAnswer = finalArr.at(-1);
 	const answer = readlineSync.question(`\nQuestion: ${randomNumberFirst} | ${randomNumberSecond}\nYour answer: `);
+
+	// Проверка ответа
+	if ((correctAnswer === +answer)) { // Если ответ верный
+		console.log('Correct!');
+		scoreTimer();
+	} else { // Если ответ неверный
+		console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
+        Let's try again, ${name}`);
+	}
+};
+
+// Игра нахождения арифметической прогрессии
+export const isProgression = () => {
+	// Счетчик правильных ответов
+	const scoreTimer = () => {
+		if (score === 3) {
+			return console.log(`Congratulations, ${name}`);
+		}
+		score += 1;
+		isProgression();
+		return score;
+	};
+
+	// Получаем число для прогрессии
+	const randomProg = (min = 1, max = 10) => Math.floor(Math.random() * (max - min + 1)) + min;
+	const randomLost = (min = 0, max = 9) => Math.floor(Math.random() * (max - min + 1)) + min;
+	const progression = randomProg();
+	const lostNumber = randomLost();
+	const starProgression = random();
+	const progressionArr = [starProgression];
+
+	for (let i = 1; i <= 9; i += 1) {
+		progressionArr.push(progressionArr[i - 1] + progression);
+	}
+
+	const correctAnswer = progressionArr[lostNumber];
+	progressionArr[lostNumber] = '..';
+
+	const answer = readlineSync.question(`\nQuestion: ${progressionArr.join([' '])}\nYour answer: `);
 
 	// Проверка ответа
 	if ((correctAnswer === +answer)) { // Если ответ верный
