@@ -22,7 +22,7 @@ const isProgression = () => {
   }
 
   const correctAnswer = progressionArr[lostNumber];
-    progressionArr[lostNumber] = '..';
+  progressionArr[lostNumber] = '..';
 
   if (score < 3) {
     score += 1;
