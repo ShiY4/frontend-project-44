@@ -25,15 +25,15 @@ const calc = () => {
     case '*':
       correctAnswer = randomNumberFirst * randomNumberSecond;
       break;
-    }
+  }
 
-    if (score < 3) {
-      score += 1;
-      playGame(`Question: ${randomNumberFirst} ${operatorSymbol} ${randomNumberSecond}\nYour answer: `, correctAnswer);
-      calc();
-    } else {
-      console.log(`Congratulations, ${name}!`);
-    }
+  if (score < 3) {
+    score += 1;
+    playGame(`Question: ${randomNumberFirst} ${operatorSymbol} ${randomNumberSecond}\nYour answer: `, correctAnswer);
+    calc();
+  } else {
+    console.log(`Congratulations, ${name}!`);
+  }
 };
 
 calc();
