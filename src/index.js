@@ -10,7 +10,7 @@ export const playGame = (question, correctAnswer) => {
 	  console.log('Correct!');
 	} else {
 		console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
-		Let's try again, ${name}`);
+		Let's try again, ${name}!`);
 		process.exit();
 	}
 };
