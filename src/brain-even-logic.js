@@ -10,7 +10,7 @@ let score = 0;
 
 // Игра проверки четности числа
 const isEven = () => {
-	const randomNumber = random();
+	const randomNumber = random(1, 100);
 	const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
 	if (score < 3) {
 		score += 1;

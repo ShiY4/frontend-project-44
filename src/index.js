@@ -1,10 +1,7 @@
 import readlineSync from 'readline-sync';
 import { name } from './sayHello.js';
 
-const minNum = readlineSync.question('Wrirte min num: ');
-const maxNum = readlineSync.question('Wrirte max num: ');
-
-export const random = (min = +minNum, max = +maxNum) => Math.floor(Math.random() * (max - min + 1)) + min;
+export const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 // Функция для отображения вопроса и проверки ответа
 export const playGame = (question, correctAnswer) => {

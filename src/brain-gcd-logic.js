@@ -10,8 +10,8 @@ let score = 0;
 
 // Игра по нахорждению НОД
 const isNod = () => {
-	const randomNumberFirst = random();
-	const randomNumberSecond = random();
+	const randomNumberFirst = random(1, 100);
+	const randomNumberSecond = random(1, 100);
 	const firstArr = [];
 	const secondArr = [];
 	const finalArr = [];

@@ -12,9 +12,9 @@ let score = 0;
 const isProgression = () => {
 	// Получаем число для прогрессии
 	const randomLost = (min = 0, max = 9) => Math.floor(Math.random() * (max - min + 1)) + min;
-	const progression = random();
+	const progression = random(1, 100);
 	const lostNumber = randomLost();
-	const starProgression = random();
+	const starProgression = random(1, 100);
 	const progressionArr = [starProgression];
 
 	for (let i = 1; i <= 9; i += 1) {

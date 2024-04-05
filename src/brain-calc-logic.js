@@ -10,8 +10,8 @@ let score = 0;
 
 // Игра "Калькулятор"
 const calc = () => {
-	const randomNumberFirst = random();
-	const randomNumberSecond = random();
+	const randomNumberFirst = random(1, 100);
+	const randomNumberSecond = random(1, 100);
 	const operatorSymbol = ['+', '-', '*'][random(1, 3) - 1];
 	let correctAnswer;
 	// eslint-disable-next-line default-case

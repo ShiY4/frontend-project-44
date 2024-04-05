@@ -9,7 +9,7 @@ let score = 0;
 
 // Игра "Простое ли число?"
 const isPrime = () => {
-	const randomNumber = random();
+	const randomNumber = random(1, 100);
 	const multiplierArr = [];
 
 	for (let i = 0; i <= randomNumber; i += 1) {
