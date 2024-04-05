@@ -4,7 +4,7 @@ import { random, playGame } from './index.js';
 
 sayHello();
 
-console.log('Answer \'yes\' if the number is even, otherwise answer \'no\'.');
+console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 let score = 0;
 
