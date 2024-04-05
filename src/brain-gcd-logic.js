@@ -45,7 +45,7 @@ const isNod = () => {
 	const correctAnswer = finalArr.at(-1);
 	if (score < 3) {
 		score += 1;
-		playGame(`Question: ${randomNumberFirst} | ${randomNumberSecond}\nYour answer: `, correctAnswer);
+		playGame(`Question: ${randomNumberFirst} ${randomNumberSecond}\nYour answer: `, correctAnswer);
 		isNod();
 	} else {
 		console.log(`Congratulations, ${name}!`);
