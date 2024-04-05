@@ -15,17 +15,17 @@ const isPrime = () => {
   for (let i = 0; i <= randomNumber; i += 1) {
     if (randomNumber % i === 0) {
       multiplierArr.push(i);
-	}
+    }
   }
 
   const correctAnswer = multiplierArr.length > 2 ? 'no' : 'yes';
-    if (score < 3) {
-      score += 1;
-      playGame(`Question: ${randomNumber}\nYour answer: `, correctAnswer);
-      isPrime();
-    } else {
-      console.log(`Congratulations, ${name}!`);
-    }
+  if (score < 3) {
+    score += 1;
+    playGame(`Question: ${randomNumber}\nYour answer: `, correctAnswer);
+    isPrime();
+  } else {
+    console.log(`Congratulations, ${name}!`);
+  }
 };
 
 isPrime();

@@ -35,8 +35,8 @@ const isNod = () => {
       }
     }
   } else {
-        for (let j = 0; j <= firstArr.length; j += 1) {
-          if (secondArr.includes(firstArr[j])) {
+    for (let j = 0; j <= firstArr.length; j += 1) {
+      if (secondArr.includes(firstArr[j])) {
         finalArr.push(firstArr[j]);
       }
     }
