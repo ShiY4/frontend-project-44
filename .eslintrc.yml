@@ -19,6 +19,7 @@ rules:
   indent: [2, "tab"]
   no-tabs: 0
   no-console: 0
+  max-len: off
   import/extensions: # FIXME: remove when rule will be adjusted for new nodejs version
     - error
     - ignorePackages
