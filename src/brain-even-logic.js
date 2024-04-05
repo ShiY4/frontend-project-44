@@ -17,7 +17,7 @@ const isEven = () => {
 		playGame(`Question: ${randomNumber}\nYour answer: `, correctAnswer);
 		isEven();
 	} else {
-		console.log(`Congratulations, ${name}`);
+		console.log(`Congratulations, ${name}!`);
 	}
 };
 

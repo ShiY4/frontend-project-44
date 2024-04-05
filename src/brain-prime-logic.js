@@ -24,7 +24,7 @@ const isPrime = () => {
 		playGame(`Question: ${randomNumber}\nYour answer: `, correctAnswer);
 		isPrime();
 	} else {
-		console.log(`Congratulations, ${name}`);
+		console.log(`Congratulations, ${name}!`);
 	}
 };
 

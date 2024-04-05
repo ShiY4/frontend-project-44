@@ -48,7 +48,7 @@ const isNod = () => {
 		playGame(`Question: ${randomNumberFirst} | ${randomNumberSecond}\nYour answer: `, correctAnswer);
 		isNod();
 	} else {
-		console.log(`Congratulations, ${name}`);
+		console.log(`Congratulations, ${name}!`);
 	}
 };
 

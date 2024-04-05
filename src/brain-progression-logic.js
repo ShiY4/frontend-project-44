@@ -29,7 +29,7 @@ const isProgression = () => {
 		playGame(`Question: ${progressionArr.join(' ')}\nYour answer: `, correctAnswer);
 		isProgression();
 	} else {
-		console.log(`Congratulations, ${name}`);
+		console.log(`Congratulations, ${name}!`);
 	}
 };
 

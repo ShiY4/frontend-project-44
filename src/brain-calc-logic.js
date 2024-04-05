@@ -32,7 +32,7 @@ const calc = () => {
 		playGame(`Question: ${randomNumberFirst} ${operatorSymbol} ${randomNumberSecond}\nYour answer: `, correctAnswer);
 		calc();
 	} else {
-		console.log(`Congratulations, ${name}`);
+		console.log(`Congratulations, ${name}!`);
 	}
 };
 
