@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-import '../src/brain-calc-logic.js';
+import '../src/games/brain-calc-logic.js';

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { sayHello, name } from './sayHello.js';
-import { random, playGame } from './index.js';
+import { sayHello, name } from '../sayHello.js';
+import { random, playGame } from '../index.js';
 
 sayHello();
 

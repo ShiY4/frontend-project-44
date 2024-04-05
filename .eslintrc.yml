@@ -16,7 +16,7 @@ rules:
   quotes: 1
   no-mixed-spaces-and-tabs: 0
   no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]
-  indent: [2, "tab"]
+  indent: [2, "space"]
   no-tabs: 0
   no-console: 0
   max-len: off
