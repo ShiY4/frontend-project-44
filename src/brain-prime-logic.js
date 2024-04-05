@@ -4,7 +4,7 @@ import { random, playGame } from './index.js';
 
 sayHello();
 
-console.log('\nAnswer "yes" if given number is prime. Otherwise answer "no".');
+console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 let score = 0;
 
 // Игра "Простое ли число?"
@@ -21,7 +21,7 @@ const isPrime = () => {
 	const correctAnswer = multiplierArr.length > 2 ? 'no' : 'yes';
 	if (score < 3) {
 		score += 1;
-		playGame(`\nQuestion: ${randomNumber}\nYour answer: `, correctAnswer);
+		playGame(`Question: ${randomNumber}\nYour answer: `, correctAnswer);
 		isPrime();
 	} else {
 		console.log(`Congratulations, ${name}`);

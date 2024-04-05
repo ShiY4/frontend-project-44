@@ -4,7 +4,7 @@ import { random, playGame } from './index.js';
 
 sayHello();
 
-console.log('\nWhat number is missing in the progression?');
+console.log('What number is missing in the progression?');
 
 let score = 0;
 
@@ -26,7 +26,7 @@ const isProgression = () => {
 
 	if (score < 3) {
 		score += 1;
-		playGame(`\nQuestion: ${progressionArr.join(' ')}\nYour answer: `, correctAnswer);
+		playGame(`Question: ${progressionArr.join(' ')}\nYour answer: `, correctAnswer);
 		isProgression();
 	} else {
 		console.log(`Congratulations, ${name}`);

@@ -4,7 +4,7 @@ import { random, playGame } from './index.js';
 
 sayHello();
 
-console.log('\nFind the greatest common divisor of given numbers.');
+console.log('Find the greatest common divisor of given numbers.');
 
 let score = 0;
 
@@ -45,7 +45,7 @@ const isNod = () => {
 	const correctAnswer = finalArr.at(-1);
 	if (score < 3) {
 		score += 1;
-		playGame(`\nQuestion: ${randomNumberFirst} | ${randomNumberSecond}\nYour answer: `, correctAnswer);
+		playGame(`Question: ${randomNumberFirst} | ${randomNumberSecond}\nYour answer: `, correctAnswer);
 		isNod();
 	} else {
 		console.log(`Congratulations, ${name}`);

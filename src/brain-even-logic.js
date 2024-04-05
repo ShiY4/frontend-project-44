@@ -4,7 +4,7 @@ import { random, playGame } from './index.js';
 
 sayHello();
 
-console.log('\nAnswer \'yes\' if the number is even, otherwise answer \'no\'.');
+console.log('Answer \'yes\' if the number is even, otherwise answer \'no\'.');
 
 let score = 0;
 
@@ -14,7 +14,7 @@ const isEven = () => {
 	const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
 	if (score < 3) {
 		score += 1;
-		playGame(`\nQuestion: ${randomNumber}\nYour answer: `, correctAnswer);
+		playGame(`Question: ${randomNumber}\nYour answer: `, correctAnswer);
 		isEven();
 	} else {
 		console.log(`Congratulations, ${name}`);
