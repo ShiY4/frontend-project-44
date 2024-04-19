@@ -1,8 +1,6 @@
 import readlineSync from 'readline-sync';
 import { name } from './sayHello.js';
 
-export const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
 // Функция для отображения вопроса и проверки ответа
 export const playGame = (question, correctAnswer) => {
   const answer = readlineSync.question(question);

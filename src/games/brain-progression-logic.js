@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { sayHello, name } from '../sayHello.js';
-import { random, playGame } from '../index.js';
+import { playGame } from '../index.js';
+import { random } from '../randomizer.js';
 
 sayHello();
 
@@ -9,7 +10,7 @@ console.log('What number is missing in the progression?');
 let score = 0;
 
 // Игра нахождения арифметической прогрессии
-const isProgression = () => {
+export const isProgression = () => {
   // Получаем число для прогрессии
   const randomLost = (min = 0, max = 9) => Math.floor(Math.random() * (max - min + 1)) + min;
   const progression = random(1, 100);
@@ -33,4 +34,3 @@ const isProgression = () => {
   }
 };
 
-isProgression();

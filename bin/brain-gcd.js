@@ -1,2 +1,4 @@
 #!/usr/bin/env node
-import '../src/games/brain-gcd-logic.js';
+import { isNod } from '../src/games/brain-gcd-logic.js';
+
+isNod();

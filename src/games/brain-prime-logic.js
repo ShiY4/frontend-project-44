@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { sayHello, name } from '../sayHello.js';
-import { random, playGame } from '../index.js';
+import { playGame } from '../index.js';
+import { random } from '../randomizer.js';
 
 sayHello();
 
@@ -8,7 +9,7 @@ console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 let score = 0;
 
 // Игра "Простое ли число?"
-const isPrime = () => {
+export const isPrime = () => {
   const randomNumber = random(1, 100);
   const multiplierArr = [];
 
@@ -27,5 +28,3 @@ const isPrime = () => {
     console.log(`Congratulations, ${name}!`);
   }
 };
-
-isPrime();

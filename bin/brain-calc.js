@@ -1,2 +1,4 @@
 #!/usr/bin/env node
-import '../src/games/brain-calc-logic.js';
+import { expressionResult } from '../src/games/brain-calc-logic.js';
+
+expressionResult();

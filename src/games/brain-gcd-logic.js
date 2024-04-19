@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { sayHello, name } from '../sayHello.js';
-import { random, playGame } from '../index.js';
+import { playGame } from '../index.js';
+import { random } from '../randomizer.js';
 
 sayHello();
 
@@ -9,7 +10,7 @@ console.log('Find the greatest common divisor of given numbers.');
 let score = 0;
 
 // Игра по нахорждению НОД
-const isNod = () => {
+export const isNod = () => {
   const randomNumberFirst = random(1, 100);
   const randomNumberSecond = random(1, 100);
   const firstArr = [];
@@ -51,5 +52,3 @@ const isNod = () => {
     console.log(`Congratulations, ${name}!`);
   }
 };
-
-isNod();
