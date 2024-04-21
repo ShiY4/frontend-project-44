@@ -1,15 +1,11 @@
 #!/usr/bin/env node
-import { sayHello, name } from '../sayHello.js';
+import readlineSync from 'readline-sync';
 import { playGame } from '../index.js';
 import { random } from '../randomizer.js';
 
-sayHello();
-
-console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-let score = 0;
-
 // Игра "Простое ли число?"
 export const isPrime = () => {
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   const randomNumber = random(1, 100);
   const multiplierArr = [];
 
@@ -20,11 +16,6 @@ export const isPrime = () => {
   }
 
   const correctAnswer = multiplierArr.length > 2 ? 'no' : 'yes';
-  if (score < 3) {
-    score += 1;
-    playGame(`Question: ${randomNumber}\nYour answer: `, correctAnswer);
-    isPrime();
-  } else {
-    console.log(`Congratulations, ${name}!`);
-  }
+  const answer = readlineSync.question(`Question: ${randomNumber}\nYour answer: `);
+  playGame(correctAnswer, answer, isPrime);
 };

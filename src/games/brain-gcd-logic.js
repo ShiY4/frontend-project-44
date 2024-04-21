@@ -1,16 +1,12 @@
 #!/usr/bin/env node
-import { sayHello, name } from '../sayHello.js';
+import readlineSync from 'readline-sync';
 import { playGame } from '../index.js';
 import { random } from '../randomizer.js';
 
-sayHello();
-
-console.log('Find the greatest common divisor of given numbers.');
-
-let score = 0;
-
 // Игра по нахорждению НОД
 export const isNod = () => {
+  console.log('Find the greatest common divisor of given numbers.');
+
   const randomNumberFirst = random(1, 100);
   const randomNumberSecond = random(1, 100);
   const firstArr = [];
@@ -44,11 +40,7 @@ export const isNod = () => {
   }
 
   const correctAnswer = finalArr.at(-1);
-  if (score < 3) {
-    score += 1;
-    playGame(`Question: ${randomNumberFirst} ${randomNumberSecond}\nYour answer: `, correctAnswer);
-    isNod();
-  } else {
-    console.log(`Congratulations, ${name}!`);
-  }
+  const answer = readlineSync.question(`Question: ${randomNumberFirst} ${randomNumberSecond}\nYour answer: `);
+  console.log(correctAnswer);
+  playGame(correctAnswer, answer, isNod);
 };
