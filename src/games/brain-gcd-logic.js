@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
 import { playGame } from '../index.js';
 import { random } from '../randomizer.js';
 
 // Игра по нахорждению НОД
-export const isNod = () => {
-  console.log('Find the greatest common divisor of given numbers.');
+// eslint-disable-next-line import/prefer-default-export
+export const startNodGame = () => {
+  const start = 'Find the greatest common divisor of given numbers.';
 
   const randomNumberFirst = random(1, 100);
   const randomNumberSecond = random(1, 100);
@@ -40,7 +40,7 @@ export const isNod = () => {
   }
 
   const correctAnswer = finalArr.at(-1);
-  const answer = readlineSync.question(`Question: ${randomNumberFirst} ${randomNumberSecond}\nYour answer: `);
+  const question = (`Question: ${randomNumberFirst} ${randomNumberSecond}\nYour answer: `);
   console.log(correctAnswer);
-  playGame(correctAnswer, answer, isNod);
+  playGame(start, correctAnswer, question, startNodGame);
 };

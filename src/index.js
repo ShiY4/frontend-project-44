@@ -4,8 +4,15 @@ import { sayHello, name } from './sayHello.js';
 sayHello();
 
 let score = 0;
+let startMessage = false;
 // Функция для отображения вопроса и проверки ответа
-export const playGame = (correctAnswer, answer, fn) => {
+// eslint-disable-next-line import/prefer-default-export
+export const playGame = (start, correctAnswer, question, fn) => {
+  if (startMessage === false) {
+    console.log(start);
+    startMessage = true;
+  }
+  const answer = readlineSync.question(question);
   if (answer === correctAnswer || +answer === correctAnswer) {
     console.log('Correct!');
     if (score < 2) {

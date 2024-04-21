@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
 import { playGame } from '../index.js';
 import { random } from '../randomizer.js';
 
 // Игра нахождения арифметической прогрессии
-export const isProgression = () => {
-  console.log('What number is missing in the progression?');
+// eslint-disable-next-line import/prefer-default-export
+export const startProgressionGame = () => {
+  const start = 'What number is missing in the progression?';
   // Получаем число для прогрессии
   const randomLost = (min = 0, max = 9) => Math.floor(Math.random() * (max - min + 1)) + min;
   const progression = random(1, 100);
@@ -20,8 +20,7 @@ export const isProgression = () => {
   const correctAnswer = progressionArr[lostNumber];
   progressionArr[lostNumber] = '..';
 
-  const answer = readlineSync.question(`Question: ${progressionArr.join(' ')}\nYour answer: `);
+  const question = (`Question: ${progressionArr.join(' ')}\nYour answer: `);
 
-  playGame(correctAnswer, answer, isProgression);
+  playGame(start, correctAnswer, question, startProgressionGame);
 };
-
