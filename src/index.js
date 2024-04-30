@@ -1,28 +1,34 @@
 import readlineSync from 'readline-sync';
-import { sayHello, name } from './sayHello.js';
-
-sayHello();
+import { name } from './sayHello.js';
 
 let score = 0;
-let startMessage = false;
+let startGameMessage = false;
+let startPlayMessage = false;
 // Функция для отображения вопроса и проверки ответа
 // eslint-disable-next-line import/prefer-default-export
-export const playGame = (start, correctAnswer, question, fn) => {
-  if (startMessage === false) {
+export const playGame = (fn, start) => {
+  if (startGameMessage === false) {
     console.log(start);
-    startMessage = true;
+    startGameMessage = true;
   }
-  const answer = readlineSync.question(question);
-  if (answer === correctAnswer || +answer === correctAnswer) {
+  if (startPlayMessage === false) {
+    console.log(`Hello, ${name}!`);
+    startPlayMessage = true;
+  }
+
+  const arr = fn();
+  const answer = readlineSync.question(arr[1]);
+
+  if (answer === arr[0] || +answer === arr[0]) {
     console.log('Correct!');
     if (score < 2) {
       score += 1;
-      fn();
+      playGame(fn, start);
     } else {
       console.log(`Congratulations, ${name}!`);
     }
   } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${arr[0]}'.
     Let's try again, ${name}!`);
     process.exit();
   }

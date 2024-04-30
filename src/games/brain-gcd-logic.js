@@ -3,10 +3,9 @@ import { playGame } from '../index.js';
 import { random } from '../randomizer.js';
 
 // Игра по нахорждению НОД
-// eslint-disable-next-line import/prefer-default-export
-export const startNodGame = () => {
-  const start = 'Find the greatest common divisor of given numbers.';
+const start = 'Find the greatest common divisor of given numbers.';
 
+const getDataNod = () => {
   const randomNumberFirst = random(1, 100);
   const randomNumberSecond = random(1, 100);
   const firstArr = [];
@@ -42,5 +41,7 @@ export const startNodGame = () => {
   const correctAnswer = finalArr.at(-1);
   const question = (`Question: ${randomNumberFirst} ${randomNumberSecond}\nYour answer: `);
   console.log(correctAnswer);
-  playGame(start, correctAnswer, question, startNodGame);
+  return [correctAnswer, question];
 };
+// eslint-disable-next-line import/prefer-default-export
+export const startNodGame = () => playGame(getDataNod, start);

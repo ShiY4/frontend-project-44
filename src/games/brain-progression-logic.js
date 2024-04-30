@@ -3,9 +3,10 @@ import { playGame } from '../index.js';
 import { random } from '../randomizer.js';
 
 // Игра нахождения арифметической прогрессии
-// eslint-disable-next-line import/prefer-default-export
-export const startProgressionGame = () => {
-  const start = 'What number is missing in the progression?';
+
+const start = 'What number is missing in the progression?';
+
+const getDataProgression = () => {
   // Получаем число для прогрессии
   const randomLost = (min = 0, max = 9) => Math.floor(Math.random() * (max - min + 1)) + min;
   const progression = random(1, 100);
@@ -22,5 +23,7 @@ export const startProgressionGame = () => {
 
   const question = (`Question: ${progressionArr.join(' ')}\nYour answer: `);
 
-  playGame(start, correctAnswer, question, startProgressionGame);
+  return [correctAnswer, question];
 };
+// eslint-disable-next-line import/prefer-default-export
+export const startProgressionGame = () => playGame(getDataProgression, start);
