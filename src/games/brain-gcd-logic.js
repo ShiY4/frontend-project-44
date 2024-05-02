@@ -1,25 +1,23 @@
 #!/usr/bin/env node
-import { playGame } from '../index.js';
-import { random } from '../randomizer.js';
+import playGame from '../index.js';
+import random from '../randomizer.js';
 
 // Игра по нахорждению НОД
 const start = 'Find the greatest common divisor of given numbers.';
 
-const getDataNod = () => {
-  const randomNumberFirst = random(1, 100);
-  const randomNumberSecond = random(1, 100);
+const getNod = (firstNum, secondNum) => {
   const firstArr = [];
   const secondArr = [];
   const finalArr = [];
 
-  for (let i = 0; i <= randomNumberFirst; i += 1) {
-    if (randomNumberFirst % i === 0) {
+  for (let i = 0; i <= firstNum; i += 1) {
+    if (firstNum % i === 0) {
       firstArr.push(i);
     }
   }
 
-  for (let i = 0; i <= randomNumberSecond; i += 1) {
-    if (randomNumberSecond % i === 0) {
+  for (let i = 0; i <= secondNum; i += 1) {
+    if (secondNum % i === 0) {
       secondArr.push(i);
     }
   }
@@ -38,10 +36,19 @@ const getDataNod = () => {
     }
   }
 
-  const correctAnswer = finalArr.at(-1);
+  const result = finalArr.at(-1);
+  return result;
+};
+
+const getDataNod = () => {
+  const randomNumberFirst = random(1, 100);
+  const randomNumberSecond = random(1, 100);
+  const correctAnswer = getNod(randomNumberFirst, randomNumberSecond);
+
   const question = (`Question: ${randomNumberFirst} ${randomNumberSecond}\nYour answer: `);
-  console.log(correctAnswer);
   return [correctAnswer, question];
 };
-// eslint-disable-next-line import/prefer-default-export
-export const startNodGame = () => playGame(getDataNod, start);
+
+const startNodGame = () => playGame(getDataNod, start);
+
+export default startNodGame;

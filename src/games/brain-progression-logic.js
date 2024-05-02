@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { playGame } from '../index.js';
-import { random } from '../randomizer.js';
+import playGame from '../index.js';
+import random from '../randomizer.js';
 
 // Игра нахождения арифметической прогрессии
 
@@ -25,5 +25,7 @@ const getDataProgression = () => {
 
   return [correctAnswer, question];
 };
-// eslint-disable-next-line import/prefer-default-export
-export const startProgressionGame = () => playGame(getDataProgression, start);
+
+const startProgressionGame = () => playGame(getDataProgression, start);
+
+export default startProgressionGame;

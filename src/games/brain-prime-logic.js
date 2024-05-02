@@ -1,23 +1,30 @@
 #!/usr/bin/env node
-import { playGame } from '../index.js';
-import { random } from '../randomizer.js';
+import playGame from '../index.js';
+import random from '../randomizer.js';
 
 // Игра "Простое ли число?"
 const start = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const getDataPrime = () => {
-  const randomNumber = random(1, 100);
+const isPrime = (num) => {
   const multiplierArr = [];
 
-  for (let i = 0; i <= randomNumber; i += 1) {
-    if (randomNumber % i === 0) {
+  for (let i = 0; i <= num; i += 1) {
+    if (num % i === 0) {
       multiplierArr.push(i);
     }
   }
+  const result = multiplierArr.length > 2 ? 'no' : 'yes';
+  return result;
+};
 
-  const correctAnswer = multiplierArr.length > 2 ? 'no' : 'yes';
+const getDataPrime = () => {
+  const randomNumber = random(1, 100);
+  const correctAnswer = isPrime(randomNumber);
   const question = (`Question: ${randomNumber}\nYour answer: `);
+
   return [correctAnswer, question];
 };
-// eslint-disable-next-line import/prefer-default-export
-export const startPrimeGame = () => playGame(getDataPrime, start);
+
+const startPrimeGame = () => playGame(getDataPrime, start);
+
+export default startPrimeGame;
