@@ -2,29 +2,23 @@ import readlineSync from 'readline-sync';
 import name from './sayHello.js';
 
 // Функция для отображения вопроса и проверки ответа
-const playGame = (fn, start) => {
+const playGame = (fn, description) => {
   console.log(`Hello, ${name}!`);
+  console.log(description);
 
   for (let i = 0; i < 3; i += 1) {
-    if (i === 0) {
-      console.log(start);
-    }
+    const [correctAnswer, question] = fn();
+    const userAnswer = readlineSync.question(question);
 
-    const arr = fn();
-    const userAnswer = readlineSync.question(arr[1]);
-
-    if (userAnswer === arr[0] || +userAnswer === arr[0]) {
-      if (i < 2) {
-        console.log('Correct!');
-      } else {
-        console.log(`Correct!\nCongratulations, ${name}!`);
-      }
+    if (userAnswer === correctAnswer.toString()) {
+      console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${arr[0]}'.
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.
       Let's try again, ${name}!`);
-      process.exit();
+      return;
     }
   }
+  console.log(`Congratulations, ${name}!`);
 };
 
 export default playGame;

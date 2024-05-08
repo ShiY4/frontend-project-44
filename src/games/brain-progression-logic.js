@@ -4,7 +4,7 @@ import random from '../randomizer.js';
 
 // Игра нахождения арифметической прогрессии
 
-const start = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
 const getDataProgression = () => {
   // Получаем число для прогрессии
@@ -26,6 +26,6 @@ const getDataProgression = () => {
   return [correctAnswer, question];
 };
 
-const startProgressionGame = () => playGame(getDataProgression, start);
+const startProgressionGame = () => playGame(getDataProgression, description);
 
 export default startProgressionGame;

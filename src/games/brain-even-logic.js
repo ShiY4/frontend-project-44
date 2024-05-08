@@ -3,7 +3,7 @@ import playGame from '../index.js';
 import random from '../randomizer.js';
 
 // Игра проверки четности числа
-const start = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (num) => {
   const result = num % 2 === 0 ? 'yes' : 'no';
@@ -18,6 +18,6 @@ const getDataEven = () => {
   return [correctAnswer, question];
 };
 
-const startEvenGame = () => playGame(getDataEven, start);
+const startEvenGame = () => playGame(getDataEven, description);
 
 export default startEvenGame;

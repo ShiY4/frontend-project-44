@@ -3,21 +3,19 @@ import playGame from '../index.js';
 import random from '../randomizer.js';
 
 // Игра "Калькулятор"
-const start = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const calculate = (firstNumber, secondNumber, operator) => {
-  let result;
   switch (operator) {
     case '+':
-      result = firstNumber + secondNumber;
-      break;
+      return firstNumber + secondNumber;
     case '-':
-      result = firstNumber - secondNumber;
-      break;
+      return firstNumber - secondNumber;
+    case '*':
+      return firstNumber * secondNumber;
     default:
-      result = firstNumber * secondNumber;
+      throw new Error(`Invalid character: '${operator}'!`);
   }
-  return result;
 };
 
 const getDataExpression = () => {
@@ -31,6 +29,6 @@ const getDataExpression = () => {
   return [correctAnswer, question];
 };
 
-const startExpressionGame = () => playGame(getDataExpression, start);
+const startExpressionGame = () => playGame(getDataExpression, description);
 
 export default startExpressionGame;

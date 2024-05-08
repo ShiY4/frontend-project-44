@@ -3,7 +3,7 @@ import playGame from '../index.js';
 import random from '../randomizer.js';
 
 // Игра "Простое ли число?"
-const start = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   const multiplierArr = [];
@@ -25,6 +25,6 @@ const getDataPrime = () => {
   return [correctAnswer, question];
 };
 
-const startPrimeGame = () => playGame(getDataPrime, start);
+const startPrimeGame = () => playGame(getDataPrime, description);
 
 export default startPrimeGame;
